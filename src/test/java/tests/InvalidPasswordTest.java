@@ -6,19 +6,20 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 
-public class ValidLogin extends BaseTest {
+public class InvalidPasswordTest extends BaseTest {
 
     @Test
-    public void TC001LoginValidParams() {
+    public void TC003LoginInvalidPassword() {
 
         String email = TestValues.TEST_VALID_EMAIL;
-        String password = TestValues.TEST_VALID_PASSWORD;
+        String password = TestValues.TEST_INVALID_PASSWORD;
 
         try {
             LoginPage loginPage = new LoginPage().logInWithCredentials(email, password);
-            Assertions.assertFalse(loginPage.isLoginErrorMessageVisible(), "Error login message is displayed");
+            Assertions.assertTrue(loginPage.isLoginErrorMessageVisible(), "Error message should be visible");
         } catch (Exception e) {
             Assertions.fail(e.getMessage());
         }
+
     }
 }

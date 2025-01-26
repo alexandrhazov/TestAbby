@@ -7,7 +7,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.TimeoutException;
 import pages.LoginPage;
 
-public class DesignResponsiveness extends BaseTest {
+public class DesignResponsivenessTest extends BaseTest {
 
     @Test
     public void TC008TestDesignResponsiveness1023x778() {

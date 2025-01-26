@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 
-public class LoginWithInvalidSSO extends BaseTest {
+public class LoginWithInvalidSSOTest extends BaseTest {
 
     @Test
     public void TC016InvalidLoginWithSSO() {

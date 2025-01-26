@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
 
-public class InvalidEmail extends BaseTest {
+public class InvalidEmailTest extends BaseTest {
 
     @Test
     public void TC002TestLoginInvalidEmail() {

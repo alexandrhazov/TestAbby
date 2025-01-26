@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 
-public class CaptchaTrigger extends BaseTest {
+public class CaptchaTriggerTest extends BaseTest {
 
     @Test
     public void TC004VerifyCaptchaTriggered() {
