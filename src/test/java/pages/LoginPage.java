@@ -1,6 +1,6 @@
 package pages;
 
-//import ConfigProvider.ConfigProvider;
+import Helpers.TestValues;
 import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,7 +51,7 @@ public class LoginPage extends BasePage {
 
 
     public LoginPage() {
-        driver.get("https://app2.abtasty.com/login");
+        driver.get(TestValues.BASE_URL);
         PageFactory.initElements(driver, this);
     }
 
