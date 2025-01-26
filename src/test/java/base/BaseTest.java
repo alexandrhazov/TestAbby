@@ -18,9 +18,9 @@ abstract public class BaseTest {
         WebDriverManager.chromedriver().clearDriverCache().setup();
 
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
         options.addArguments("--user-data-dir=/tmp/unique-profile-" + System.currentTimeMillis());
         options.addArguments("--remote-allow-origins=*");
-        options.setCapability("browserVersion", "116.0.5845.111");
         driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
