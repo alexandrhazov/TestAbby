@@ -69,7 +69,7 @@ public class LoginPage extends BasePage {
     public LoginPage logInWithSSO(String email) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         loginWithSSOField.click();
-        wait.until(ExpectedConditions.visibilityOf(signInSSOField));
+        wait.until(ExpectedConditions.elementToBeClickable(signInSSOField));
         emailField.click();
         emailField.sendKeys(email);
         signInSSOField.click();
