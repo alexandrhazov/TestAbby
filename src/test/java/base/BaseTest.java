@@ -6,6 +6,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -15,10 +16,16 @@ abstract public class BaseTest {
     @BeforeEach
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--user-data-dir=/tmp/unique-profile-" + System.currentTimeMillis());
+
+        driver = new ChromeDriver(options);
+
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
         BasePage.setDriver(driver);
     }
 
