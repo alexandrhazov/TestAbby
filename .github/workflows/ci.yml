@@ -9,6 +9,9 @@ on:
     branches:
       - main
 
+env:
+  baseUrl: "https://app2.abtasty.com/login" 
+
 jobs:
   build:
     runs-on: ubuntu-latest  
