@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 
-public class TC001ValidLogin extends BaseTest {
+public class ValidLogin extends BaseTest {
 
     @Test
-    public void TestLoginValidParams() {
+    public void TC001LoginValidParams() {
 
         String email = TestValues.TEST_VALID_EMAIL;
         String password = TestValues.TEST_VALID_PASSWORD;

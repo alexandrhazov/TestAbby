@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
 
-public class TC002InvalidEmail extends BaseTest {
+public class InvalidEmail extends BaseTest {
 
     @Test
-    public void TestLoginInvalidEmail() {
+    public void TC002TestLoginInvalidEmail() {
 
         String email = TestValues.TEST_INVALID_EMAIL;
         String password = TestValues.TEST_VALID_PASSWORD;

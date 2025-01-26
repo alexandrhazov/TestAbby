@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 
-public class TC007PasswordToggle extends BaseTest {
+public class PasswordToggle extends BaseTest {
 
     @Test
-    public void testPasswordToggleOnAndOff() {
+    public void TC007PasswordToggleOnAndOff() {
 
         String password = TestValues.TEST_VALID_PASSWORD;
 

@@ -38,6 +38,12 @@ public class LoginPage extends BasePage {
     @FindBy(id = "loginErrorMessage")
     private WebElement loginErrorMessage;
 
+    @FindBy(css = "[data-testid='emailErrorMessage']")
+    private WebElement loginSSOErrorMessage;
+
+    @FindBy(xpath = "//button[text()='Sign In']")
+    private WebElement signInSSOField;
+
     //Mock css for Captcha as there is no currently implemented in testing URL
     @FindBy(css = "iframe[src*='captcha']")
     private WebElement captchaField;
@@ -61,10 +67,12 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage logInWithSSO(String email) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         loginWithSSOField.click();
+        wait.until(ExpectedConditions.visibilityOf(signInSSOField));
         emailField.click();
-        emailField.sendKeys();
-        signInField.click();
+        emailField.sendKeys(email);
+        signInSSOField.click();
         return this;
     }
 
@@ -115,6 +123,12 @@ public class LoginPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(loginErrorMessage));
         return loginErrorMessage.isDisplayed();
+    }
+
+    public boolean isLoginSSOErrorMessageVisible() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(loginSSOErrorMessage));
+        return loginSSOErrorMessage.isDisplayed();
     }
 
     public boolean isCaptchaVisible() {

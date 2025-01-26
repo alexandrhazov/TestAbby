@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 
-public class TC004CaptchaTrigger extends BaseTest {
+public class CaptchaTrigger extends BaseTest {
 
     @Test
-    public void TestVerifyCaptchaTriggered() {
+    public void TC004VerifyCaptchaTriggered() {
 
         String email = TestValues.TEST_INVALID_EMAIL;
         String password = TestValues.TEST_INVALID_PASSWORD;
