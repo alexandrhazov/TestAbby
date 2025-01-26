@@ -96,12 +96,16 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage clearLoginField() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(emailField));
         emailField.click();
         emailField.clear();
         return this;
     }
 
     public LoginPage clearPasswordField() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(passwordField));
         passwordField.click();
         passwordField.clear();
         return this;
