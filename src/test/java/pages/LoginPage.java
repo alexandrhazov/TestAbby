@@ -1,8 +1,7 @@
 package pages;
 
-import ConfigProvider.ConfigProvider;
+//import ConfigProvider.ConfigProvider;
 import base.BasePage;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.NoSuchElementException;
 
 public class LoginPage extends BasePage {
 
@@ -53,7 +51,7 @@ public class LoginPage extends BasePage {
 
 
     public LoginPage() {
-        driver.get(ConfigProvider.URL);
+        driver.get("https://app2.abtasty.com/login");
         PageFactory.initElements(driver, this);
     }
 
