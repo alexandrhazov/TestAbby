@@ -15,7 +15,7 @@ abstract public class BaseTest {
 
     @BeforeEach
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().clearDriverCache().setup();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--user-data-dir=/tmp/unique-profile-" + System.currentTimeMillis());
