@@ -19,7 +19,7 @@ abstract public class BaseTest {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--user-data-dir=/tmp/unique-profile-" + System.currentTimeMillis());
-
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
