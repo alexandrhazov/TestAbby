@@ -1,5 +1,7 @@
 package pages;
 
+import Helpers.ConfigProvider;
+import Helpers.DefaultConfigProvider;
 import Helpers.TestValues;
 import base.BasePage;
 import org.openqa.selenium.WebElement;
@@ -11,6 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LoginPage extends BasePage {
+
+    private ConfigProvider configProvider;
 
     @FindBy(id = "email")
     private WebElement emailField;
@@ -51,7 +55,8 @@ public class LoginPage extends BasePage {
 
 
     public LoginPage() {
-        driver.get(TestValues.BASE_URL);
+        this.configProvider = new DefaultConfigProvider();
+        driver.get(configProvider.getBaseUrl());
         PageFactory.initElements(driver, this);
     }
 
